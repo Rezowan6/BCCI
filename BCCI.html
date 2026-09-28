@@ -1,0 +1,1054 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BCCI | Bangladesh Civil & Construction Institute</title>
+    <meta
+      name="description"
+      content="Bangladesh Civil & Construction Institute (BCCI) — Civil Engineering, Construction & BNBC Compliance Platform"
+    />
+    <style>
+      :root {
+        --primary: #082b59;
+        --primary-light: #0d4287;
+        --secondary: #0a7658;
+        --accent: #ffcf33;
+        --dark: #14213d;
+        --light-bg: #f4f7fa;
+        --card-bg: #ffffff;
+        --border-color: #e2e8f0;
+        --text-muted: #5e6d82;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Segoe UI", Arial, "Noto Sans Bengali", sans-serif;
+        line-height: 1.6;
+        color: var(--dark);
+        background: var(--light-bg);
+      }
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      /* Header & Nav */
+      header {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: #fff;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      }
+      .nav {
+        max-width: 1200px;
+        margin: auto;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        font-size: 26px;
+        font-weight: 800;
+        letter-spacing: 1px;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      /* =========================
+            Desktop Navigation
+          ========================= */
+
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        font-weight: 600;
+        font-size: 14px;
+        flex-wrap: wrap;
+      }
+
+      nav a {
+        display: block;
+        padding: 5px 8px;
+        border-radius: 5px;
+        transition: all 0.2s ease;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* =========================
+        Hamburger
+      ========================= */
+
+      .hamburger {
+        display: none;
+        width: 42px;
+        height: 42px;
+        padding: 8px;
+        border: none;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+
+        z-index: 1001;
+      }
+
+      .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        border-radius: 5px;
+        background: currentColor;
+
+        transition:
+          transform 0.3s ease,
+          opacity 0.2s ease,
+          width 0.3s ease;
+      }
+
+      /* =========================
+        Hamburger Active
+      ========================= */
+
+      .hamburger.active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active span:nth-child(2) {
+        opacity: 0;
+        width: 0;
+      }
+
+      .hamburger.active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, #0a315f, #0a7658);
+        color: white;
+        padding: 70px 20px;
+      }
+      .hero-inner {
+        max-width: 1200px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+      }
+      .badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        padding: 6px 16px;
+        border-radius: 30px;
+        font-size: 14px;
+        margin-bottom: 15px;
+      }
+      h1 {
+        font-size: clamp(32px, 5vw, 52px);
+        line-height: 1.15;
+        margin-bottom: 15px;
+      }
+      .hero p {
+        font-size: 17px;
+        color: #e8f2ff;
+        margin-bottom: 20px;
+      }
+      .btn-group {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 22px;
+        border-radius: 8px;
+        background: var(--accent);
+        color: #13233d;
+        font-weight: 700;
+        cursor: pointer;
+        border: none;
+        transition: 0.3s;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      }
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(255, 207, 51, 0.4);
+      }
+      .btn.alt {
+        background: #fff;
+        color: var(--primary);
+      }
+      .btn.alt:hover {
+        background: #f0f0f0;
+      }
+      .hero-card {
+        background: rgba(255, 255, 255, 0.1);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 30px;
+        border-radius: 20px;
+        text-align: center;
+        backdrop-filter: blur(10px);
+      }
+      .hero-card .big {
+        font-size: 72px;
+        font-weight: 900;
+        color: var(--accent);
+      }
+
+      /* Main Sections */
+      section {
+        max-width: 1200px;
+        margin: auto;
+        padding: 50px 20px;
+      }
+      .title {
+        text-align: center;
+        margin-bottom: 35px;
+      }
+      .title h2 {
+        font-size: 30px;
+        color: var(--primary);
+        margin-bottom: 8px;
+      }
+      .title p {
+        color: var(--text-muted);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+      }
+      .card {
+        background: var(--card-bg);
+        border-radius: 14px;
+        padding: 22px;
+        box-shadow: 0 4px 15px rgba(20, 33, 61, 0.06);
+        border: 1px solid var(--border-color);
+        transition: 0.3s;
+      }
+      .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(20, 33, 61, 0.1);
+      }
+      .card h3 {
+        margin-bottom: 10px;
+        color: var(--primary);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .card p,
+      .card ul {
+        color: #4a5568;
+        font-size: 14px;
+      }
+      .card ul {
+        list-style: none;
+        padding: 0;
+      }
+      .card ul li {
+        margin-bottom: 6px;
+        padding-left: 15px;
+        position: relative;
+      }
+      .card ul li::before {
+        content: "•";
+        color: var(--secondary);
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+      }
+
+      /* Soft Highlight Section */
+      .section-soft {
+        background: #edf6f3;
+        border-radius: 20px;
+        padding: 35px 25px;
+      }
+
+      /* BNBC Section & Badges */
+      .bnbc-badge {
+        background: #e0f2fe;
+        color: #0369a1;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 12px;
+        font-weight: bold;
+        display: inline-block;
+        margin-bottom: 8px;
+      }
+      .bnbc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 20px;
+      }
+
+      /* Calculators */
+      .calc-box {
+        background: #fff;
+        border-radius: 16px;
+        padding: 25px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+      .calc-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 15px;
+        margin-bottom: 15px;
+      }
+      .calc-box label {
+        font-weight: 600;
+        font-size: 14px;
+        color: var(--primary);
+        display: block;
+        margin-bottom: 5px;
+      }
+      .calc-box input,
+      .calc-box select {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid #cbd5e1;
+        border-radius: 8px;
+        font-size: 14px;
+        outline: none;
+      }
+      .calc-box input:focus,
+      .calc-box select:focus {
+        border-color: var(--secondary);
+      }
+      .result {
+        margin-top: 15px;
+        padding: 15px;
+        background: #eef7f4;
+        border-radius: 8px;
+        font-weight: 700;
+        color: var(--secondary);
+        border-left: 4px solid var(--secondary);
+      }
+
+      /* Tables */
+      .bcci-table-wrapper {
+        overflow-x: auto;
+      }
+      .bcci-table {
+        width: 100%;
+        border-collapse: collapse;
+        background: #fff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      .bcci-table th,
+      .bcci-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid var(--border-color);
+        text-align: left;
+        font-size: 14px;
+      }
+      .bcci-table th {
+        background: var(--primary);
+        color: #fff;
+      }
+
+      /* FAQ Accordion */
+      .faq details {
+        background: #fff;
+        margin: 10px 0;
+        padding: 14px 18px;
+        border-radius: 10px;
+        border: 1px solid var(--border-color);
+      }
+      .faq summary {
+        cursor: pointer;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      /* Footer */
+      footer {
+        background: #06172e;
+        color: #dce7f3;
+        text-align: center;
+        padding: 30px 20px;
+        margin-top: 40px;
+      }
+
+      /* =========================
+   Mobile Responsive
+========================= */
+
+      @media (max-width: 850px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .btn-group {
+          justify-content: center;
+        }
+
+        /* Hamburger Show */
+        .hamburger {
+          display: flex;
+        }
+
+        /* Mobile Navigation */
+        nav {
+          position: absolute;
+
+          top: 100%;
+          left: 0;
+          right: 0;
+
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+
+          gap: 0;
+
+          padding: 0 20px;
+
+          background: var(--background, #111);
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+
+          /* Closed */
+          max-height: 0;
+          overflow: hidden;
+          opacity: 0;
+          visibility: hidden;
+
+          transform: translateY(-15px);
+
+          transition:
+            max-height 0.45s ease,
+            opacity 0.3s ease,
+            transform 0.35s ease,
+            padding 0.35s ease,
+            visibility 0.35s ease;
+
+          z-index: 1000;
+        }
+
+        /* Open */
+        nav.active {
+          max-height: 600px;
+
+          padding-top: 12px;
+          padding-bottom: 12px;
+
+          opacity: 1;
+          visibility: visible;
+
+          transform: translateY(0);
+        }
+
+        /* Mobile Links */
+        nav a {
+          width: 100%;
+
+          padding: 12px 10px;
+
+          border-radius: 6px;
+
+          text-align: left;
+
+          transform: translateY(-8px);
+          opacity: 0;
+
+          transition:
+            opacity 0.3s ease,
+            transform 0.3s ease,
+            background 0.2s ease;
+        }
+
+        /* Links animation when menu opens */
+        nav.active a {
+          opacity: 1;
+          transform: translateY(0);
+        }
+
+        nav.active a:nth-child(1) {
+          transition-delay: 0.05s;
+        }
+
+        nav.active a:nth-child(2) {
+          transition-delay: 0.08s;
+        }
+
+        nav.active a:nth-child(3) {
+          transition-delay: 0.11s;
+        }
+
+        nav.active a:nth-child(4) {
+          transition-delay: 0.14s;
+        }
+
+        nav.active a:nth-child(5) {
+          transition-delay: 0.17s;
+        }
+
+        nav.active a:nth-child(6) {
+          transition-delay: 0.2s;
+        }
+
+        nav.active a:nth-child(7) {
+          transition-delay: 0.23s;
+        }
+
+        nav.active a:nth-child(8) {
+          transition-delay: 0.26s;
+        }
+
+        nav.active a:nth-child(9) {
+          transition-delay: 0.29s;
+        }
+
+        nav a:hover {
+          background: rgba(255, 255, 255, 0.08);
+        }
+      }
+
+      /* Desktop: hamburger hidden */
+      @media (min-width: 851px) {
+        .hamburger {
+          display: none;
+        }
+
+        nav {
+          display: flex !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation Header -->
+    <header>
+      <div class="nav">
+        <div class="logo">BC<span>CI</span></div>
+        <!-- Hamburger Button -->
+        <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav id="main-nav">
+          <a href="#home">Home</a>
+          <a href="#bnbc-rules">BNBC Rules</a>
+          <a href="#bnbc-calc">FAR Calculator</a>
+          <a href="#courses">Courses</a>
+          <a href="#estimate">Estimate</a>
+          <a href="#conversion">Conversion</a>
+          <a href="#safety">Safety</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="home">
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="hero-inner">
+          <div>
+            <span class="badge"
+              >🏗️ Civil Engineering & Building Construction Platform</span
+            >
+            <h1>Build Smart.<br />Follow BNBC 2020 Code.</h1>
+            <p>
+              Bangladesh Civil & Construction Institute (BCCI) — সিভিল
+              ইঞ্জিনিয়ারিং, নির্মাণ পদ্ধতি, এস্টিমেশন এবং বাংলাদেশ ন্যাশনাল
+              বিল্ডিং কোড (BNBC) নিয়মাবলী সহজ বাংলায় শেখার অনলাইন প্ল্যাটফর্ম।
+            </p>
+            <div class="btn-group">
+              <a class="btn" href="#bnbc-rules">BNBC রুলস দেখুন</a>
+              <a class="btn alt" href="#bnbc-calc">FAR ক্যালকুলেটর</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="big">BCCI</div>
+            <h3>Engineering & Construction Rules</h3>
+            <p>Learn • Design • Estimate • Construct</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BNBC 2020 Rules Section -->
+      <section id="bnbc-rules">
+        <div class="title">
+          <h2>🇧🇩 BNBC 2020 অনুযায়ী গুরুত্বপূর্ণ রুলস ও গাইডলাইন</h2>
+          <p>
+            ভবনের নকশা এবং নির্মাণের সময় বাংলাদেশ বিল্ডিং কোড অনুসরণের মূল
+            নিয়মাবলী
+          </p>
+        </div>
+
+        <div class="bnbc-grid">
+          <div class="card">
+            <span class="bnbc-badge">Setback Rules</span>
+            <h3>১. জায়গা ছাড়ার নিয়ম (Setback Rules)</h3>
+            <p>
+              ভবন তৈরির সময় প্লটের সীমানা থেকে ন্যূনতম যতটুকু জায়গা ছেড়ে দিতে
+              হয়:
+            </p>
+            <ul>
+              <li>
+                <strong>সামনের সেটব্যাক (Front):</strong> নূন্যতম ১.৫ মিটার (৫
+                ফিট) বা সামনের রাস্তার প্রস্থের ওপর নির্ভরশীল।
+              </li>
+              <li>
+                <strong>পেছনের সেটব্যাক (Rear):</strong> ভবনের উচ্চতা অনুযায়ী
+                ন্যূনতম ১.০ মিটার থেকে ৩.০ মিটার পর্যন্ত।
+              </li>
+              <li>
+                <strong>পাশের সেটব্যাক (Side):</strong> প্রতিটি পাশে নূন্যতম ১.০
+                মিটার (৩.২৫ ফিট) খালি রাখতে হয়।
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="bnbc-badge">FAR & PGC</span>
+            <h3>২. FAR এবং গ্রাউন্ড কভারেজ (PGC)</h3>
+            <p>জমি ব্যবহারের অনুমতি ও উন্মুক্ত স্থান নির্দেশিকা:</p>
+            <ul>
+              <li>
+                <strong>Floor Area Ratio (FAR):</strong> প্লটের রাস্তার চওড়া ও
+                এরিয়ার উপর নির্ভর করে সর্বোচ্চ কতটুকু বিল্ট-আপ এরিয়া পাবেন তা
+                নির্ধারণ করা হয়।
+              </li>
+              <li>
+                <strong>Max Ground Coverage (PGC):</strong> প্লটের আকারের ওপর
+                ভিত্তি করে সর্বোচ্চ ৫০% থেকে ৬৭.৫% অংশ ভবন দিয়ে ঢাকা যাবে। বাকি
+                অংশ ফাঁকা রাখতে হবে।
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="bnbc-badge">Fire & Egress</span>
+            <h3>৩. ফায়ার সেফটি ও জরুরি সিঁড়ি</h3>
+            <p>অগ্নি নিরাপত্তা এবং জরুরি বহির্গমন নিয়ম:</p>
+            <ul>
+              <li>
+                <strong>সিঁড়ির চওড়া (Stair Width):</strong> সাধারণ আবাসিক ভবনে
+                সিঁড়ির ন্যূনতম চওড়া ১.১৫ মিটার (৪৬ ইঞ্চি) হতে হবে।
+              </li>
+              <li>
+                <strong>Emergency Exit:</strong> ৬ তলার ওপরের যেকোনো ভবনে আলাদা
+                ফায়ার এক্সিট সিঁড়ি বাধ্যতামূলক।
+              </li>
+              <li>
+                <strong>Travel Distance:</strong> ফ্ল্যাটের যেকোনো প্রান্ত থেকে
+                সিঁড়ির সর্বোচ্চ দূরত্ব ৩০ মিটারের বেশি হবে না।
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="bnbc-badge">Structural Design</span>
+            <h3>৪. ক্লিয়ার কভার (Clear Cover)</h3>
+            <p>
+              RCC স্ট্রাকচারের স্থায়ীত্ব বৃদ্ধির জন্য রডের চারপাশের কনক্রিট
+              কভার:
+            </p>
+            <ul>
+              <li>
+                <strong>Footing (ফুটিং):</strong> মাটির সংস্পর্শে থাকা কভার
+                ন্যূনতম ৭৫ মিমি (৩ ইঞ্চি)।
+              </li>
+              <li>
+                <strong>Column (কলাম):</strong> কলামের জন্য ন্যূনতম ৪০ মিমি (১.৫
+                ইঞ্চি)।
+              </li>
+              <li>
+                <strong>Beam (বিম):</strong> বিমের জন্য ২৫ মিমি থেকে ৪০ মিমি।
+              </li>
+              <li>
+                <strong>Slab (ছাদ):</strong> স্ল্যাবের জন্য ২০ মিমি (০.৭৫
+                ইঞ্চি)।
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="bnbc-badge">Foundation & Loads</span>
+            <h3>৫. সয়েল টেস্ট ও লোড নিয়মাবলী</h3>
+            <p>মাটি পরীক্ষা এবং ভূমিকম্প প্রতিরোধী ডিজাইন:</p>
+            <ul>
+              <li>
+                <strong>Soil Test:</strong> ৪ তলার চেয়ে উঁচু ভবনের জন্য
+                প্রফেশনাল সয়েল টেস্ট রিপোর্ট বাধ্যতামূলক।
+              </li>
+              <li>
+                <strong>Seismic Zone:</strong> বিএনবিসি অনুযায়ী বাংলাদেশকে ৪টি
+                ভূ-কম্পন জোনে ভাগ করা হয়েছে।
+              </li>
+              <li>
+                <strong>Min Foundation Depth:</strong> যেকোনো ভবনের জন্য মাটির
+                নিচে ন্যূনতম ভিত্তি গভীরতা ১.৫ মিটার হতে হবে।
+              </li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <span class="bnbc-badge">Ventilation & Plumbing</span>
+            <h3>৬. আলো-বাতাস ও স্যানিটেশন</h3>
+            <p>স্বাস্থ্যকর পরিবেশ নিশ্চিতকরণ বিধিমালা:</p>
+            <ul>
+              <li>
+                <strong>Light & Air:</strong> প্রতিটি বাসযোগ্য রুমের মেঝের
+                আয়তনের ন্যূনতম ১০% পরিমাপের জানালা থাকতে হবে।
+              </li>
+              <li>
+                <strong>Septic Tank Gap:</strong> সেপটিক ট্যাংক এবং পানীয় জলের
+                উৎসের দূরত্ব ন্যূনতম ১৫ মিটার (৫০ ফিট) হতে হবে।
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- BNBC FAR Calculator -->
+      <section id="bnbc-calc">
+        <div class="title">
+          <h2>🧮 BNBC FAR & Built-up Area Calculator</h2>
+          <p>
+            আপনার জমির পরিমাণ এবং FAR মান বসিয়ে কত স্কয়ার ফিট বাড়ি নির্মাণ করতে
+            পারবেন তা দ্রুত হিসাব করুন
+          </p>
+        </div>
+
+        <div class="calc-box">
+          <div class="calc-grid">
+            <div>
+              <label>জমির পরিমাণ (Plot Area)</label>
+              <input id="plotArea" type="number" placeholder="যেমন: 5" />
+            </div>
+            <div>
+              <label>একক (Unit)</label>
+              <select id="areaUnit">
+                <option value="katha">কথা (Katha)</option>
+                <option value="sqft">স্কয়ার ফিট (ft²)</option>
+                <option value="decimal">শতাংশ (Decimal)</option>
+              </select>
+            </div>
+            <div>
+              <label>অনুমোদিত FAR মান (যেমন: 3.5)</label>
+              <input
+                id="farVal"
+                type="number"
+                step="0.1"
+                placeholder="যেমন: 3.5"
+              />
+            </div>
+          </div>
+          <button class="btn" onclick="calcFAR()">
+            হিসাব করুন (Calculate)
+          </button>
+          <div id="farResult" class="result">
+            উপরে মান দিয়ে 'হিসাব করুন' বাটনে ক্লিক করুন।
+          </div>
+        </div>
+      </section>
+
+      <!-- Subject Courses Section -->
+      <section id="courses">
+        <div class="title">
+          <h2>আমাদের শিক্ষণীয় বিষয়সমূহ</h2>
+          <p>প্র্যাকটিক্যাল লার্নিং ও সিভিল ইঞ্জিনিয়ারিং নলেজ</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>🧱 Building Construction</h3>
+            <p>
+              মাটি পরীক্ষা থেকে ছাদ ঢালাই ও ফিনিশিং কাজের সম্পূর্ণ ধারাবাহিক
+              গাইড।
+            </p>
+          </div>
+          <div class="card">
+            <h3>📐 Estimation & Costing</h3>
+            <p>
+              ইট, বালি, সিমেন্ট, রড এবং টোটাল প্রজেক্টের বাজেট হিসাব করার নিয়ম।
+            </p>
+          </div>
+          <div class="card">
+            <h3>🏗️ RCC & Structural Knowledge</h3>
+            <p>ফুটিং, কলাম, বিম ও স্ল্যাবের রড বাইন্ডিং এবং কনক্রিট রেশিও।</p>
+          </div>
+          <div class="card">
+            <h3>📏 Surveying & Drawing Reading</h3>
+            <p>
+              অটোক্যাড প্ল্যান, সেকশন ড্রয়িং ও সাইট পরিমাপ শেখার টিউটোরিয়াল।
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Unit Conversion Section -->
+      <section id="conversion">
+        <div class="title">
+          <h2>📐 Unit Conversion — কনভার্সন ক্যালকুলেটর</h2>
+          <p>দৈর্ঘ্য, এরিয়া, ভলিউম ও রডের ওজন পরিমাপের দ্রুত সমাধান</p>
+        </div>
+        <div class="calc-box">
+          <div class="calc-grid">
+            <div>
+              <label>কনভার্সন টাইপ</label>
+              <select id="convType">
+                <option value="mft">Meter → Feet</option>
+                <option value="ftm">Feet → Meter</option>
+                <option value="sqmft">m² → ft²</option>
+                <option value="ftsqm">ft² → m²</option>
+                <option value="cumcft">m³ → ft³</option>
+                <option value="cftcum">ft³ → m³</option>
+                <option value="kgton">Kg → Tonne</option>
+              </select>
+            </div>
+            <div>
+              <label>মান বসান (Value)</label>
+              <input id="convVal" type="number" placeholder="0" />
+            </div>
+          </div>
+          <button class="btn" onclick="convertBCCI()">Convert</button>
+          <div id="convResult" class="result">ফলাফল এখানে দেখাবে।</div>
+        </div>
+      </section>
+
+      <!-- Volume Estimate Section -->
+      <section id="estimate">
+        <div class="title">
+          <h2>🧮 Smart Quantity & Cost Calculator</h2>
+          <p>যে কোনো ব্লকের আয়তন ও সম্ভাব্য খরচ হিসাব করুন</p>
+        </div>
+        <div class="calc-box">
+          <div class="calc-grid">
+            <div>
+              <label>দৈর্ঘ্য (Length - ft)</label
+              ><input id="estL" type="number" placeholder="10" />
+            </div>
+            <div>
+              <label>প্রস্থ (Width - ft)</label
+              ><input id="estW" type="number" placeholder="10" />
+            </div>
+            <div>
+              <label>উচ্চতা/পুরুত্ব (Height - ft)</label
+              ><input id="estD" type="number" placeholder="0.5" />
+            </div>
+            <div>
+              <label>রেট (Tk / ft³)</label
+              ><input id="estRate" type="number" placeholder="250" />
+            </div>
+          </div>
+          <button class="btn" onclick="estimateBCCI()">Calculate</button>
+          <div id="estResult" class="result">পরিমাপ দিয়ে Calculate চাপুন।</div>
+        </div>
+      </section>
+
+      <!-- Safety Section -->
+      <section id="safety">
+        <div class="title">
+          <h2>🦺 Construction Safety Checklist</h2>
+          <p>BNBC সেফটি কোড অনুযায়ী সাইট নিরাপত্তা সূচক</p>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <h3>Personal Safety (PPE)</h3>
+            <p>
+              সাইটে পিপিই (হেলমেট, সেফটি বুট, গ্লাভস ও রিফ্লেক্টিভ জ্যাকেট)
+              ব্যবহার নিশ্চিতকরণ।
+            </p>
+          </div>
+          <div class="card">
+            <h3>Height Safety</h3>
+            <p>
+              উঁচুতে কাজের জন্য শক্ত স্কাফোল্ডিং এবং সেফটি হার্নেস/বেল্ট ব্যবহার
+              করা।
+            </p>
+          </div>
+          <div class="card">
+            <h3>Excavation Barrier</h3>
+            <p>
+              পাইলিং বা গর্তের চার পাশে সেফটি নেট ও ওয়ার্নিং বারিক্যাডের
+              ব্যবস্থা।
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <div class="section-soft">
+          <div class="title"><h2>BCCI সম্পর্কে</h2></div>
+          <p>
+            Bangladesh Civil & Construction Institute (BCCI) হলো একটি ডিজিটাল
+            লার্নিং প্ল্যাটফর্ম। এটি সিভিল ইঞ্জিনিয়ারিং শিক্ষার্থী, ডিপ্লোমা
+            ইঞ্জিনিয়ার এবং গৃহনির্মাণকারীদের জন্য সহজ ভাষায় নির্মাণ পদ্ধতি ও
+            BNBC কোড শেখার একটি সহজ মাধ্যম।
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <div class="calc-box" style="text-align: center">
+          <h2>আমাদের সোশ্যাল প্ল্যাটফর্মে যুক্ত হন</h2>
+          <p style="margin-bottom: 20px; color: var(--text-muted)">
+            প্র্যাকটিক্যাল টিউটোরিয়াল এবং নোটস পেতে ফলো করুন
+          </p>
+          <div class="btn-group">
+            <a
+              class="btn"
+              href="https://www.facebook.com/mohammed.kausar.537280"
+              target="_blank"
+              >Facebook Page</a
+            >
+            <a class="btn alt" href="https://www.youtube.com/" target="_blank"
+              >YouTube Channel</a
+            >
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p><strong>BCCI</strong> — Bangladesh Civil & Construction Institute</p>
+      <p>Learn • Design • Estimate • Construct</p>
+      <p>© 2026 BCCI. Educational Platform & Code Guide.</p>
+    </footer>
+
+    <script>
+      const hamburger = document.getElementById("hamburger");
+      const nav = document.getElementById("main-nav");
+      const navLinks = nav.querySelectorAll("a");
+
+      // Toggle mobile menu
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        nav.classList.toggle("active");
+
+        const isOpen = nav.classList.contains("active");
+
+        hamburger.setAttribute("aria-expanded", isOpen);
+      });
+
+      // Close menu after clicking a navigation link
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+
+          hamburger.setAttribute("aria-expanded", "false");
+        });
+      });
+
+      // Close menu when clicking outside
+      document.addEventListener("click", (event) => {
+        const clickedInsideNav = nav.contains(event.target);
+        const clickedHamburger = hamburger.contains(event.target);
+
+        if (!clickedInsideNav && !clickedHamburger) {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+
+          hamburger.setAttribute("aria-expanded", "false");
+        }
+      });
+
+      // Reset menu when switching back to desktop
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 850) {
+          hamburger.classList.remove("active");
+          nav.classList.remove("active");
+
+          hamburger.setAttribute("aria-expanded", "false");
+        }
+      });
+      // FAR Calculator JS
+      function calcFAR() {
+        const area = parseFloat(document.getElementById("plotArea").value) || 0;
+        const unit = document.getElementById("areaUnit").value;
+        const far = parseFloat(document.getElementById("farVal").value) || 0;
+
+        if (area <= 0 || far <= 0) {
+          document.getElementById("farResult").innerHTML =
+            "⚠️ সঠিক জমির পরিমাণ এবং FAR মান দিন।";
+          return;
+        }
+
+        let areaInSqFt = 0;
+        if (unit === "katha") {
+          areaInSqFt = area * 720;
+        } else if (unit === "decimal") {
+          areaInSqFt = area * 435.6;
+        } else {
+          areaInSqFt = area;
+        }
+
+        const totalBuiltUpArea = areaInSqFt * far;
+
+        document.getElementById("farResult").innerHTML = `
+        <strong>মোট জমির এরিয়া:</strong> ${areaInSqFt.toFixed(2)} ft²<br>
+        <strong>সর্বমোট অনুমোদিত তৈরি এলাকা (FAR Built-up Area):</strong> <span style="font-size:18px;">${totalBuiltUpArea.toFixed(2)} ft²</span>
+    `;
+      }
+
+      // Unit Converter JS
+      function convertBCCI() {
+        const v = parseFloat(document.getElementById("convVal").value) || 0;
+        const t = document.getElementById("convType").value;
+        const f = {
+          mft: (v) => v * 3.28084,
+          ftm: (v) => v * 0.3048,
+          sqmft: (v) => v * 10.7639,
+          ftsqm: (v) => v * 0.092903,
+          cumcft: (v) => v * 35.3147,
+          cftcum: (v) => v * 0.0283168,
+          kgton: (v) => v / 1000,
+        };
+        document.getElementById("convResult").innerHTML =
+          "ফলাফল: <strong>" + f[t](v).toFixed(4) + "</strong>";
+      }
+
+      // Estimate JS
+      function estimateBCCI() {
+        const l = parseFloat(document.getElementById("estL").value) || 0;
+        const w = parseFloat(document.getElementById("estW").value) || 0;
+        const d = parseFloat(document.getElementById("estD").value) || 0;
+        const r = parseFloat(document.getElementById("estRate").value) || 0;
+
+        const vol = l * w * d;
+        const cost = vol * r;
+
+        document.getElementById("estResult").innerHTML = `
+        Volume = <strong>${vol.toFixed(2)} ft³</strong> | 
+        সম্ভাব্য খরচ (Cost) = <strong>Tk ${cost.toFixed(2)}</strong>
+    `;
+      }
+    </script>
+  </body>
+</html>
